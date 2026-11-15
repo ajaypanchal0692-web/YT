@@ -11,6 +11,6 @@ database_name="db_yt"
 database_id="ea31b32a-2e9c-4223-846d-e2c131dc117f"
 [[r2_buckets]]
 binding="MEDIA"
-bucket_name="ytfactory-media"
+bucket_name="yt-media"
 [ai]
 binding="AI"
