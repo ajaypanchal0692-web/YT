@@ -1,0 +1,32 @@
+name: Upload approved video privately
+on:
+  workflow_dispatch:
+    inputs:
+      job_id: {required: true, type: string}
+permissions:
+  contents: read
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install upload dependencies
+        run: python3 -m pip install --upgrade google-api-python-client google-auth requests
+      - name: Upload privately and set thumbnail
+        env:
+          WORKER_API_URL: ${{ secrets.WORKER_API_URL }}
+          PUBLISHER_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+          JOB_ID: ${{ inputs.job_id }}
+        run: python3 scripts/publish.py
+
+      - name: Return failed upload to review queue
+        if: failure()
+        env:
+          WORKER_API_URL: ${{ secrets.WORKER_API_URL }}
+          PUBLISHER_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+          JOB_ID: ${{ inputs.job_id }}
+        run: |
+          curl -sS -X POST "$WORKER_API_URL/api/publish/$JOB_ID/failed" \
+            -H "Authorization: Bearer $PUBLISHER_TOKEN" -H "Content-Type: application/json" \
+            -d '{"error":"YouTube upload workflow failed. Inspect Actions log and retry."}' || true
