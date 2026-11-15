@@ -1,0 +1,1 @@
+window.YTF_CONFIG={API_BASE:"https://YOUR-WORKER.workers.dev",APP_TOKEN:"REPLACE_WITH_APP_TOKEN"};
