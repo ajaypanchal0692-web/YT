@@ -2,7 +2,7 @@ name="youtube-ai-factory-api"
 main="worker/index.js"
 compatibility_date="2026-11-15"
 [vars]
-GITHUB_OWNER="REPLACE_WITH_GITHUB_OWNER"
+GITHUB_OWNER="ajaypanchal0692-web"
 GITHUB_REPO="ajaypanchal0692-web/YT"
 WORKER_ORIGIN="https://yt-bih.pages.dev"
 [[d1_databases]]
