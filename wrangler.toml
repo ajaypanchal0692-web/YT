@@ -2,6 +2,9 @@ name="yt"
 main="index.js"
 compatibility_date="2026-11-15"
 [vars]
+# ...
+[vars]
+APP_TOKEN = "ed87deebf807e18472a27e1b5b051ba17bff45f60ac9ee5532b578ed127ae072"
 GITHUB_OWNER = "ajaypanchal0692-web"
 GITHUB_REPO = "YT"
 WORKER_ORIGIN = "https://yt.ajaypanchal0692.workers.dev"
