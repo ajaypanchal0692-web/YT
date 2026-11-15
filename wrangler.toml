@@ -4,7 +4,7 @@ compatibility_date="2026-11-15"
 [vars]
 GITHUB_OWNER="REPLACE_WITH_GITHUB_OWNER"
 GITHUB_REPO="REPLACE_WITH_REPOSITORY"
-WORKER_ORIGIN="https://yt-bih.pages.dev/"
+WORKER_ORIGIN="https://yt-bih.pages.dev"
 [[d1_databases]]
 binding="DB"
 database_name="db_yt"
