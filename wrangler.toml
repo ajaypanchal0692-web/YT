@@ -1,0 +1,16 @@
+name="youtube-ai-factory-api"
+main="worker/index.js"
+compatibility_date="2026-11-15"
+[vars]
+GITHUB_OWNER="REPLACE_WITH_GITHUB_OWNER"
+GITHUB_REPO="REPLACE_WITH_REPOSITORY"
+WORKER_ORIGIN="https://YOUR-WORKER.workers.dev"
+[[d1_databases]]
+binding="DB"
+database_name="ytfactory"
+database_id="REPLACE_WITH_D1_DATABASE_ID"
+[[r2_buckets]]
+binding="MEDIA"
+bucket_name="ytfactory-media"
+[ai]
+binding="AI"
