@@ -148,31 +148,6 @@ export default {
     const p = u.pathname;
 
     try {
-      // TEMPORARY PUBLIC DIAGNOSTIC ENDPOINT.
-      // REMOVE THIS BLOCK AFTER TESTING.
-      if (req.method === "GET" && p === "/__debug/app-token") {
-        const token = e.APP_TOKEN || "";
-
-        const hash = token
-          ? Array.from(
-              new Uint8Array(
-                await crypto.subtle.digest(
-                  "SHA-256",
-                  new TextEncoder().encode(token)
-                )
-              )
-            )
-              .map(x => x.toString(16).padStart(2, "0"))
-              .join("")
-          : null;
-
-        return json({
-          configured: !!token,
-          length: token.length,
-          fingerprint: hash
-        });
-      }
-
       // Signed R2 media URLs
       if (req.method === "GET" && p === "/__media_proxy") {
         const k = u.searchParams.get("key") || "";
