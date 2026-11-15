@@ -3,7 +3,7 @@ main="worker/index.js"
 compatibility_date="2026-11-15"
 [vars]
 GITHUB_OWNER="ajaypanchal0692-web"
-GITHUB_REPO="ajaypanchal0692-web/YT"
+GITHUB_REPO="YT"
 WORKER_ORIGIN="https://yt-bih.pages.dev"
 [[d1_databases]]
 binding="DB"
